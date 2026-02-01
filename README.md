@@ -1,4 +1,4 @@
-# Sales-Revenue_Analysis_for_an_E-Commerce_Platform
+# Sales Revenue Analysis for an E-Commerce Platform
 
 ## ANALYSIS QUESTIONS
 #### 1️⃣Executive / Revenue Performance
