@@ -1,16 +1,19 @@
--- Creating tables
+-- Creating Tables
 
--- Creating table for order_payments_dataset.csv dataset
-CREATE TABLE public.order_payments_dataset (
-    order_id INT,
-    payment_sequential INT,
-    payment_type VARCHAR(50),
-    payment_installments INT,
-    payment_value DECIMAL(10, 2)
+-- Creating customers_dataset table with primary key
+CREATE TABLE public.customers_dataset (
+    customer_id VARCHAR(32) PRIMARY KEY,
+    customer_unique_id VARCHAR(32),
+    customer_zip_code_prefix INT,
+    customer_city TEXT,
+    customer_state VARCHAR(2)
+)
+
+-- Creating sellers_dataset table with primary key
+CREATE TABLE public.sellers_dataset (
+    seller_id VARCHAR(32) NOT NULL PRIMARY KEY,
+    seller_zip_code_prefix INT,
+    seller_city TEXT,
+    seller_state CHAR(2)
 );
-/*
-I have initially created incorrect data tupe for 'order_id' column, I will modify it
-*/
-ALTER TABLE public.order_payments_dataset
-ALTER COLUMN order_id TYPE VARCHAR(50)
-USING order_id::VARCHAR;
+
