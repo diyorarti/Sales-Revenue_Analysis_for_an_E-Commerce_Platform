@@ -6,7 +6,6 @@
 - 1. How much total revenue did the platform generate?
 - 2. How does revenue trend monthly?
 - 3. Is revenue growing or declining over time?
-- 4. What is the average order value (AOV)?
 This section evaluates overall business health and growth trends.
 
 #### 2️⃣ Order & Sales Dynamics
