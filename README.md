@@ -2,7 +2,7 @@
 
 ## ANALYSIS QUESTIONS
 #### 1️⃣Executive / Revenue Performance
-“How is the business doing?”
+“How is the business doing?” 
 - 1. How much total revenue did the platform generate?
 - 2. How does revenue trend monthly?
 - 3. Is revenue growing or declining over time?
