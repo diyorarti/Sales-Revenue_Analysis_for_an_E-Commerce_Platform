@@ -7,45 +7,35 @@ Month-over-month (MoM) revenue growth/decline based on order purchase date:
   1) monthly revenue
   2) previous month revenue (LAG)
   3) absolute change
-  4) percent change
-  5) direction label (growing/declining/flat)
+  4) direction label (growing/declining/flat)
 */
 
 WITH monthly_revenue AS (
     SELECT
-        DATE_TRUNC('month', o.order_purchase_timestamp) AS month_start,
-        SUM(oi.price) AS revenue
-    FROM public.orders_dataset o
-    INNER JOIN public.order_items_dataset oi
-        ON o.order_id = oi.order_id
-    WHERE o.order_purchase_timestamp IS NOT NULL
-      AND o.order_status IN ('delivered', 'shipped')
-    GROUP BY month_start
+        DATE_TRUNC('month', o.order_purchase_timestamp) as month,
+        SUM(io.price) as revenue
+    FROM orders_dataset o
+    INNER JOIN order_items_dataset io ON o.order_id = io.order_id
+    WHERE o.order_status IN ('delivered', 'shipped')
+    GROUP BY month
+    ORDER BY month
 ),
-revenue_with_prev AS (
+previous_month_revenue AS (
     SELECT
-        month_start,
+        month,
         revenue,
-        LAG(revenue) OVER (ORDER BY month_start) AS prev_month_revenue
+        LAG(revenue) OVER (ORDER BY month) AS prev_month_revenue
     FROM monthly_revenue
 )
-SELECT
-    TO_CHAR(month_start, 'YYYY-MM') AS year_month,
-    ROUND(revenue, 2) AS monthly_revenue,
-    ROUND(prev_month_revenue, 2) AS previous_month_revenue,
-    ROUND(revenue - prev_month_revenue, 2) AS revenue_change,
-    ROUND(
-        CASE
-            WHEN prev_month_revenue IS NULL OR prev_month_revenue = 0 THEN NULL
-            ELSE (revenue - prev_month_revenue) / prev_month_revenue * 100
-        END,
-        2
-    ) AS mom_change_percent,
+SELECT 
+    TO_CHAR(month, 'YYYY-MM') as month,
+    ROUND(revenue) as revenue,
+    ROUND(prev_month_revenue) AS prev_month_revenue,
+    ROUND(revenue - prev_month_revenue) AS revenue_change,
     CASE
-        WHEN prev_month_revenue IS NULL THEN 'n/a'
         WHEN revenue > prev_month_revenue THEN 'growing'
         WHEN revenue < prev_month_revenue THEN 'declining'
         ELSE 'flat'
     END AS trend_direction
-FROM revenue_with_prev
-ORDER BY month_start;
+FROM previous_month_revenue
+ORDER BY month;
