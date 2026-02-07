@@ -1,4 +1,6 @@
 /*
+Question -> How does revenue trend monthly?
+
 Monthly product revenue based on order purchase date:
     - Revenue is calculated as the sum of item-level product prices
     - Time dimension is the order purchase month (YYYY-MM)

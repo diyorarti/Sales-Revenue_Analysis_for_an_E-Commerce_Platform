@@ -9,55 +9,32 @@
 This section evaluates overall business health and growth trends.
 
 #### 2️⃣ Order & Sales Dynamics
-
 These answer: “How are orders behaving?”
-
-How many total orders were placed?
-
-How many orders per month?
-
-What is the average items per order?
-
-What percentage of orders are completed vs canceled?
+- 1. How many total orders were placed?
+- 2. How many orders per month?
+- 3. What is the average items per order?
+- 4. What percentage of orders are completed vs canceled?
 
 #### 3️⃣ Product Performance
-
 These answer: “What products drive revenue?”
-
-Which products generate the highest revenue?
-
-Which products sell the highest quantity?
-
-What percentage of revenue comes from the top 10 products?
-
-Are there products with high volume but low revenue?
+- 1. Which products generate the highest revenue?
+- 2. Which products sell the highest quantity?
+- 3. What percentage of revenue comes from the top 10 products?
+- 4. Are there products with high volume but low revenue?
 
 #### 4️⃣ Customer Behavior
-
 These answer: “Who are our customers and how do they behave?”
-
-How many unique customers are there?
-
-How many are new vs returning?
-
-What is the repeat purchase rate?
-
-What is the average revenue per customer?
-
-Who are the top customers by revenue?
+- 1. How many unique customers are there?
+- 2. How many are new vs returning?
+- 3. What is the repeat purchase rate?
+- 4. What is the average revenue per customer?
+- 5. Who are the top customers by revenue?
 
 #### 5️⃣ Business KPIs (Summary Section)
-
 These are your dashboard-style outputs:
-
-Total Revenue
-
-Total Orders
-
-Total Customers
-
-Average Order Value (AOV)
-
-Revenue per Customer
-
-Repeat Purchase Rate
+- 1. Total Revenue
+- 2. Total Orders
+- 3. Total Customers
+- 4. Average Order Value (AOV)
+- 5. Revenue per Customer
+- 6. Repeat Purchase Rate

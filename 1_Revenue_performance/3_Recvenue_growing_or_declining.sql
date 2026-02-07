@@ -1,4 +1,6 @@
 /*
+Question -> Is revenue growing or declining over time?
+
 Month-over-month (MoM) revenue growth/decline based on order purchase date:
 - Revenue = sum of item-level product prices
 - Time bucket = purchase month

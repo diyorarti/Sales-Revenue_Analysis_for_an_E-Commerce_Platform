@@ -1,4 +1,6 @@
 /*
+Question -> How much total revenue did the platform generate?
+
 Total product sales revenue:
     - Sum of item-level product prices
     - Represents gross sales value of products sold
