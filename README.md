@@ -22,15 +22,7 @@ These answer: “What products drive revenue?”
 - 3. What percentage of revenue comes from the top 10 product categories?
 - 4. Are there product categories with high volume but low revenue?
 
-#### 4️⃣ Customer Behavior
-These answer: “Who are our customers and how do they behave?”
-- 1. How many unique customers are there?
-- 2. How many are new vs returning?
-- 3. What is the repeat purchase rate?
-- 4. What is the average revenue per customer?
-- 5. Who are the top customers by revenue?
-
-#### 5️⃣ Business KPIs (Summary Section)
+#### 4️⃣ Business KPIs (Summary Section)
 These are your dashboard-style outputs:
 - 1. Total Revenue
 - 2. Total Orders
