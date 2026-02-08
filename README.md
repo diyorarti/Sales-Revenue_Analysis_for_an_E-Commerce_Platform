@@ -15,12 +15,12 @@ These answer: “How are orders behaving?”
 - 3. What is the average items per order?
 - 4. What percentage of orders are completed vs canceled?
 
-#### 3️⃣ Product Performance
+#### 3️⃣ Product Categoryies Performance
 These answer: “What products drive revenue?”
-- 1. Which products generate the highest revenue?
-- 2. Which products sell the highest quantity?
-- 3. What percentage of revenue comes from the top 10 products?
-- 4. Are there products with high volume but low revenue?
+- 1. Which product categories generate the highest revenue?
+- 2. Which product categories sell the highest quantity?
+- 3. What percentage of revenue comes from the top 10 product categories?
+- 4. Are there product categories with high volume but low revenue?
 
 #### 4️⃣ Customer Behavior
 These answer: “Who are our customers and how do they behave?”
