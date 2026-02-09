@@ -153,7 +153,7 @@ These orders represent valid customer purchase activity on the platform.
 
 #### Monthly Order Volume
 
-The chart below shows the **number of orders placed per month** based on fulfilled transactions.
+The chart below shows the **number of orders placed per month** based on fulfilled transactions ('delivered', 'shipped', 'approved', 'invoiced', 'processing').
 Order volume increases significantly from early 2017, reaching its highest levels in late 2017 and early 2018.  
 This trend indicates growing customer adoption and higher platform activity over time.
 
