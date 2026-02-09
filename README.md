@@ -19,14 +19,3 @@ These answer: “How are orders behaving?”
 These answer: “What products drive revenue?”
 - 1. Which product categories generate the highest revenue?
 - 2. Which product categories sell the highest quantity?
-- 3. What percentage of revenue comes from the top 10 product categories?
-- 4. Are there product categories with high volume but low revenue?
-
-#### 4️⃣ Business KPIs (Summary Section)
-These are your dashboard-style outputs:
-- 1. Total Revenue
-- 2. Total Orders
-- 3. Total Customers
-- 4. Average Order Value (AOV)
-- 5. Revenue per Customer
-- 6. Repeat Purchase Rate
