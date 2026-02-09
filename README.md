@@ -175,4 +175,4 @@ The chart below compares the number of **delivered** and **canceled** orders on 
 The results show that the overwhelming majority of orders are successfully delivered, while canceled orders represent only a small portion of total transactions.  
 This indicates strong operational efficiency and reliable order fulfillment.
 
-![Completed vs Canceled Orders](assets/completed_vs_canceled.png)
+![Completed vs Canceled Orders](assets/completed_vs_cancelled.png)
