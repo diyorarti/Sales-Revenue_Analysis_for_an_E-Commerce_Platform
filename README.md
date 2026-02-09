@@ -91,3 +91,52 @@ Revenue shows a **strong upward trend from early 2017 through 2018**, indicating
 Short-term fluctuations are visible, which are typical for e-commerce platforms due to seasonality and demand changes.
 
 ![Monthly Revenue Trend](assets/monthly-trends.png)
+
+
+#### Whether Revenue Is Growing or Declining (Month-over-Month)
+
+To determine whether revenue is **growing or declining**, monthly revenue is first calculated based on the **order purchase date** for orders with a status of **`delivered`** or **`shipped`**.  
+Revenue is defined as the **sum of item-level product prices**. Then, the previous month’s revenue is retrieved using a window function (`LAG`) to compute the month-over-month change and classify the trend direction.
+
+```
+WITH monthly_revenue AS (
+    SELECT
+        DATE_TRUNC('month', o.order_purchase_timestamp) as month,
+        SUM(io.price) as revenue
+    FROM orders_dataset o
+    INNER JOIN order_items_dataset io ON o.order_id = io.order_id
+    WHERE o.order_status IN ('delivered', 'shipped')
+    GROUP BY month
+    ORDER BY month
+),
+previous_month_revenue AS (
+    SELECT
+        month,
+        revenue,
+        LAG(revenue) OVER (ORDER BY month) AS prev_month_revenue
+    FROM monthly_revenue
+)
+SELECT 
+    TO_CHAR(month, 'YYYY-MM') as month,
+    ROUND(revenue) as revenue,
+    ROUND(prev_month_revenue) AS prev_month_revenue,
+    ROUND(revenue - prev_month_revenue) AS revenue_change,
+    CASE
+        WHEN revenue > prev_month_revenue THEN 'growing'
+        WHEN revenue < prev_month_revenue THEN 'declining'
+        ELSE 'flat'
+    END AS trend_direction
+FROM previous_month_revenue
+ORDER BY month;
+```
+#### Revenue Growth Direction (Month-over-Month)
+
+The chart below shows the **direction of revenue change** on a monthly basis.  
+Each month is classified as **Growing**, **Declining**, or **Stable** based on the change in revenue compared to the previous month.
+
+This visualization highlights:
+- Periods of sustained growth
+- Short-term revenue declines
+- Overall revenue momentum over time
+
+![Monthly Revenue Trend Direction](assets/growing_declining.png)

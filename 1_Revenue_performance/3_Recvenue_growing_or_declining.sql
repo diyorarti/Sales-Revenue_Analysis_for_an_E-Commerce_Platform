@@ -41,3 +41,4 @@ SELECT
     END AS trend_direction
 FROM previous_month_revenue
 ORDER BY month;
+
