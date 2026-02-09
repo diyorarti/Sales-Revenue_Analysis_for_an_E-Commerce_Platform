@@ -41,8 +41,8 @@ These answer: “How are orders behaving?”
 - 3. What is the average items per order?
 - 4. What percentage of orders are completed vs canceled?
 
-#### 3️⃣ Product Categoryies Performance
-These answer: “What products drive revenue?”
+#### 3️⃣ Product Categoryy Performance
+These answer: “What product categories drive revenue?”
 - 1. Which product categories generate the highest revenue?
 - 2. Which product categories sell the highest quantity?
 
@@ -124,3 +124,23 @@ The results show that the overwhelming majority of orders are successfully deliv
 This indicates strong operational efficiency and reliable order fulfillment.
 
 ![Completed vs Canceled Orders](assets/completed_vs_cancelled.png)
+
+
+### 🏷️ Product Category Performance
+
+#### Top Product Categories by Revenue
+
+The chart below shows the **top 10 product categories by total revenue**, calculated from delivered and shipped orders only.
+
+The results indicate that a small number of categories contribute the majority of revenue, with categories such as **health & beauty**, **watches & gifts**, and **home-related products** leading overall sales performance.
+
+![Top Product Categories by Revenue](assets/top_revenue_product_categories.png)
+
+#### Top-Selling Product Categories by Quantity
+
+The chart below shows the **top 10 product categories by number of items sold**, considering only delivered and shipped orders.
+
+The results highlight categories with the **highest sales volume**, such as **bed, bath & table**, **health & beauty**, and **sports & leisure**.  
+These categories drive a large portion of overall transactions, even if they do not always generate the highest revenue.
+
+![Top Selling Product Categories by Quantity](assets/top_selling_product_categories.png)
