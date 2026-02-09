@@ -1,6 +1,32 @@
 # Sales Revenue Analysis for an E-Commerce Platform
 
-## ANALYSIS QUESTIONS
+## 📊 Introduction
+This project performs sales & revenue analysis on real-world-ecommerce dataset using PostgreSQL.
+The goal is to analyze revenue performance, order dynamics and product categories performance.
+
+This project simulates a real analytics workflow:
+- 1. Database creation
+- 2. Schema design with relational constraints
+- 3. Data ingestion
+- 4. Business-oriented analytical queries
+
+## 📂 Dataset 
+The project usess the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), which constrains real transactional data from a Brazilian online marketplace.
+
+This dataset includes information about:
+- Customers and sellers
+- Orders and orders statuses 
+- Producst and product categories
+- Payments and reviews 
+- Geolocation data
+
+## 🛠️ Tech Stack
+- **Database:** PostgreSQL
+- **Query Language:** SQL
+- **Data Source:** CSV files (Kaggle dataset)
+- **Environment:** Visual Studio Code 
+
+## 🔍 ANALYSIS QUESTIONS
 #### 1️⃣Executive / Revenue Performance
 “How is the business doing?” 
 - 1. How much total revenue did the platform generate?
