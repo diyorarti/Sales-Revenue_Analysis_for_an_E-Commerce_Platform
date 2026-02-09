@@ -57,15 +57,6 @@ Revenue is defined as the **sum of item-level product prices** from the order it
 
 > **Note:** This metric represents **product revenue only** and does not include freight or shipping charges.
 
-```sql
-SELECT 
-    SUM(oi.price) AS delivered_items_revenue
-FROM order_items_dataset oi
-INNER JOIN orders_dataset o 
-    ON o.order_id = oi.order_id
-WHERE o.order_status IN ('delivered', 'shipped');
-```
-
 Total Items Revenue (Delivered & Shipped Orders) **13 372 225.55**
 
 ---
@@ -75,18 +66,6 @@ Total Items Revenue (Delivered & Shipped Orders) **13 372 225.55**
 Monthly revenue trends are calculated based on the **order purchase date**.  
 Only orders with a status of **`delivered`** or **`shipped`** are included, and revenue is defined as the **sum of item-level product prices**.
 
-```sql
-SELECT
-    SUM(oi.price) AS monthly_revenue,
-    TO_CHAR(o.order_purchase_timestamp, 'YYYY-MM') AS year_month
-FROM orders_dataset o
-INNER JOIN order_items_dataset oi 
-    ON o.order_id = oi.order_id
-WHERE o.order_purchase_timestamp IS NOT NULL
-  AND o.order_status IN ('delivered', 'shipped')
-GROUP BY year_month
-ORDER BY year_month;
-```
 The chart below illustrates the **monthly revenue trend** based on delivered and shipped orders.
 
 Revenue shows a **strong upward trend from early 2017 through 2018**, indicating consistent business growth and increasing transaction volume over time.  
@@ -101,37 +80,6 @@ Short-term fluctuations are visible, which are typical for e-commerce platforms 
 To determine whether revenue is **growing or declining**, monthly revenue is first calculated based on the **order purchase date** for orders with a status of **`delivered`** or **`shipped`**.  
 Revenue is defined as the **sum of item-level product prices**. Then, the previous month’s revenue is retrieved using a window function (`LAG`) to compute the month-over-month change and classify the trend direction.
 
-```
-WITH monthly_revenue AS (
-    SELECT
-        DATE_TRUNC('month', o.order_purchase_timestamp) as month,
-        SUM(io.price) as revenue
-    FROM orders_dataset o
-    INNER JOIN order_items_dataset io ON o.order_id = io.order_id
-    WHERE o.order_status IN ('delivered', 'shipped')
-    GROUP BY month
-    ORDER BY month
-),
-previous_month_revenue AS (
-    SELECT
-        month,
-        revenue,
-        LAG(revenue) OVER (ORDER BY month) AS prev_month_revenue
-    FROM monthly_revenue
-)
-SELECT 
-    TO_CHAR(month, 'YYYY-MM') as month,
-    ROUND(revenue) as revenue,
-    ROUND(prev_month_revenue) AS prev_month_revenue,
-    ROUND(revenue - prev_month_revenue) AS revenue_change,
-    CASE
-        WHEN revenue > prev_month_revenue THEN 'growing'
-        WHEN revenue < prev_month_revenue THEN 'declining'
-        ELSE 'flat'
-    END AS trend_direction
-FROM previous_month_revenue
-ORDER BY month;
-```
 #### Revenue Growth Direction (Month-over-Month)
 
 The chart below shows the **direction of revenue change** on a monthly basis.  
