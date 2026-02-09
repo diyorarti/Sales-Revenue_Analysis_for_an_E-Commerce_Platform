@@ -67,3 +67,27 @@ WHERE o.order_status IN ('delivered', 'shipped');
 ```
 
 Total Items Revenue (Delivered & Shipped Orders) **13 372 225.55**
+
+#### Monthly Revenue Trends (Delivered & Shipped Orders)
+
+Monthly revenue trends are calculated based on the **order purchase date**.  
+Only orders with a status of **`delivered`** or **`shipped`** are included, and revenue is defined as the **sum of item-level product prices**.
+
+```sql
+SELECT
+    SUM(oi.price) AS monthly_revenue,
+    TO_CHAR(o.order_purchase_timestamp, 'YYYY-MM') AS year_month
+FROM orders_dataset o
+INNER JOIN order_items_dataset oi 
+    ON o.order_id = oi.order_id
+WHERE o.order_purchase_timestamp IS NOT NULL
+  AND o.order_status IN ('delivered', 'shipped')
+GROUP BY year_month
+ORDER BY year_month;
+```
+The chart below illustrates the **monthly revenue trend** based on delivered and shipped orders.
+
+Revenue shows a **strong upward trend from early 2017 through 2018**, indicating consistent business growth and increasing transaction volume over time.  
+Short-term fluctuations are visible, which are typical for e-commerce platforms due to seasonality and demand changes.
+
+![Monthly Revenue Trend](assets/monthly-trends.png)
