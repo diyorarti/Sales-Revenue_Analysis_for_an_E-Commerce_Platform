@@ -1,8 +1,8 @@
 # Sales Revenue Analysis for an E-Commerce Platform
 
 ## 📊 Introduction
-This project performs sales & revenue analysis on real-world-ecommerce dataset using PostgreSQL.
-The goal is to analyze revenue performance, order dynamics and product categories performance.
+This project performs a sales and revenue analysis on a real-world e-commerce dataset using PostgreSQL.
+The main goal is to analyze revenue performance, order dynamics, and product category performance through structured SQL queries.
 
 This project simulates a real analytics workflow:
 - 1. Database creation
@@ -45,3 +45,25 @@ These answer: “How are orders behaving?”
 These answer: “What products drive revenue?”
 - 1. Which product categories generate the highest revenue?
 - 2. Which product categories sell the highest quantity?
+
+## 📈 The Analysis
+
+### 💰 Revenue Performance
+
+#### Total Revenue (Delivered & Shipped Orders)
+
+To calculate total revenue from fulfilled transactions, only orders with a status of **`delivered`** or **`shipped`** are considered.  
+Revenue is defined as the **sum of item-level product prices** from the order items table.
+
+> **Note:** This metric represents **product revenue only** and does not include freight or shipping charges.
+
+```sql
+SELECT 
+    SUM(oi.price) AS delivered_items_revenue
+FROM order_items_dataset oi
+INNER JOIN orders_dataset o 
+    ON o.order_id = oi.order_id
+WHERE o.order_status IN ('delivered', 'shipped');
+
+
+Total Items Revenue (Delivered & Shipped Orders) **13 372 225.55**
