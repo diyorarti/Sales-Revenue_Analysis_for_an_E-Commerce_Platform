@@ -68,6 +68,8 @@ WHERE o.order_status IN ('delivered', 'shipped');
 
 Total Items Revenue (Delivered & Shipped Orders) **13 372 225.55**
 
+---
+
 #### Monthly Revenue Trends (Delivered & Shipped Orders)
 
 Monthly revenue trends are calculated based on the **order purchase date**.  
@@ -92,6 +94,7 @@ Short-term fluctuations are visible, which are typical for e-commerce platforms 
 
 ![Monthly Revenue Trend](assets/monthly-trends.png)
 
+---
 
 #### Whether Revenue Is Growing or Declining (Month-over-Month)
 
