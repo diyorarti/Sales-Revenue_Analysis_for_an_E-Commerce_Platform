@@ -64,6 +64,6 @@ FROM order_items_dataset oi
 INNER JOIN orders_dataset o 
     ON o.order_id = oi.order_id
 WHERE o.order_status IN ('delivered', 'shipped');
-
+```
 
 Total Items Revenue (Delivered & Shipped Orders) **13 372 225.55**
