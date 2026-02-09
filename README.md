@@ -136,6 +136,8 @@ The results indicate that a small number of categories contribute the majority o
 
 ![Top Product Categories by Revenue](assets/top_revenue_product_categories.png)
 
+---
+
 #### Top-Selling Product Categories by Quantity
 
 The chart below shows the **top 10 product categories by number of items sold**, considering only delivered and shipped orders.
