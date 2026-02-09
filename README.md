@@ -140,3 +140,36 @@ This visualization highlights:
 - Overall revenue momentum over time
 
 ![Monthly Revenue Trend Direction](assets/growing_declining.png)
+
+### 🛒 Order & Sales Dynamics
+
+The total number of orders with a status of **`delivered`**, **`shipped`**, **`approved`**, **`invoiced`**, or **`processing`** is **98,202**.  
+These orders represent valid customer purchase activity on the platform.
+
+---
+
+#### Monthly Order Volume
+
+The chart below shows the **number of orders placed per month** based on fulfilled transactions.
+Order volume increases significantly from early 2017, reaching its highest levels in late 2017 and early 2018.  
+This trend indicates growing customer adoption and higher platform activity over time.
+
+> **Note:** The sharp decline in the final month is due to **incomplete data**, not an actual reduction in order activity.
+![Monthly Order Volume](assets/monthly_orders.png)
+
+---
+
+#### Average Items per Order
+
+The **average number of items per order** is **1.14**, indicating that most customers purchase **a single item per transaction**, with a smaller proportion placing multi-item orders.
+
+---
+
+#### Completed vs Canceled Orders
+
+The chart below compares the number of **delivered** and **canceled** orders on the platform.
+
+The results show that the overwhelming majority of orders are successfully delivered, while canceled orders represent only a small portion of total transactions.  
+This indicates strong operational efficiency and reliable order fulfillment.
+
+![Completed vs Canceled Orders](assets/completed_vs_canceled.png)
